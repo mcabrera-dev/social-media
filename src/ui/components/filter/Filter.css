@@ -1,0 +1,21 @@
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-control {
+  padding: 8px;
+  outline: none;
+  min-width: 250px;
+  border: 1px solid var(--pc-grey-2);
+  border-radius: 4px;
+}
+
+.label {
+  background-color: var(--pc-sky-blue);
+  padding: 4px;
+  color: var(--pc-white);
+  font-weight: bold;
+  border-radius: 10px;
+}

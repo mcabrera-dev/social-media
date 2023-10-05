@@ -1,15 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import "./core/wdyr/wdyr";
+import "reflect-metadata";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "./core/ioc/ioc.react";
+import { container } from "./core/ioc/ioc";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
+
+const queryClient = new QueryClient();
+
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Provider container={container}>
+        <QueryClientProvider client={queryClient}>
+          <App />
+        </QueryClientProvider>
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
