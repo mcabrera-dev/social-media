@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
+:root {
+  --pc-grey-0: #353c47;
+  --pc-grey-1: #7a7f86;
+  --pc-grey-2: #d1d3d6;
+  --pc-grey-3: #eee;
+  --pc-grey-4: #f8f8f8;
+  --pc-sky-blue: #1e6ec8;
+  --pc-white: #fff;
+
+  --pc-content-primary: var(--pc-grey-0);
+  --pc-content-secondary: var(--pc-grey-1);
+  --pc-background-0: var(--pc-white);
+  --pc-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px,
+    rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px,
+    rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+hr {
+  height: 1px;
+  background-color: var(--pc-grey-2);
+  border: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.title-link {
+  color: var(--pc-sky-blue);
+  font-weight: bold;
+  font-size: x-large;
+  text-decoration: none;
+}
+
+.main-title {
+  padding: 16px 16px 0 16px;
+}
+
+.main {
+  padding: 0 40px;
+}
+
+.home {
+  .user-list-container {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 20px;
+    padding-top: 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.filter-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row-reverse;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  display: flex;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.user-table {
+  border: solid 1px #DDEEEE;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font: normal 13px Arial, sans-serif;
+}
+
+.user-table thead th {
+  background-color: #DDEFEF;
+  border: solid 1px #DDEEEE;
+  color: #336B6B;
+  padding: 10px;
+  text-align: left;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+.user-table tbody td {
+  border: solid 1px #DDEEEE;
+  color: #333;
+  padding: 10px;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+.user-table tbody tr:hover {
+  background-color: rgb(203, 247, 247);
+  cursor: pointer;
 }
