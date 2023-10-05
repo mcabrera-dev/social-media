@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Link, useRoutes } from "react-router-dom";
+import routes from "./core/routes/routes";
+import React from "react";
+import { useIsFetching } from "react-query";
+import "./App.css";
+import Loader from "./ui/components/loader/Loader";
 
-function App() {
+export default function App() {
+  let element = useRoutes(routes);
+  const isFetching = useIsFetching();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="main">
+      <div className="header">
+        <Link className="title-link" to="/">
+          {" "}
+          <div className="main-title">Social Media</div>{" "}
+        </Link>
+        {!!isFetching && <Loader />}
+      </div>
+
+      {element}
+    </main>
   );
 }
-
-export default App;
